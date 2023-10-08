@@ -1,0 +1,1 @@
+Carleton++ Competitive Programming Club
