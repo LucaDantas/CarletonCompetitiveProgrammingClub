@@ -1,17 +1,23 @@
 #include<iostream>
 using namespace std;
  
+const int N = 200005;
+ 
+int n, a[N];
+unsigned long long ans = 0;
+int curMax = 0;
+ 
 int main() {
-    long long n;
     cin >> n;
-    while (n != 0) {
-        cout << n << ' ';
-        if (n % 2 == 0) {
-            n = n / 2;
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    for (int i = 0; i < n; i++) {
+        if (a[i] > curMax) {
+            curMax = a[i];
         } else {
-            n = n * 3 + 1;
+            ans += curMax - a[i];
         }
     }
-    
-    cout << 1;
+    cout << ans << ' ';
 }
